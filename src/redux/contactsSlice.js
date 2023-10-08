@@ -10,7 +10,7 @@ export const slice = createSlice({
 
   extraReducers: {
     [fetchContacts.pending](state) {
-      console.log(state);
+    
       
       state.isLoading = true;
     },

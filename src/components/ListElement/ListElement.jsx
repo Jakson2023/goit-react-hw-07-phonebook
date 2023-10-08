@@ -4,7 +4,7 @@ import { deleteContact } from 'redux/contactsSlice';
 
 export const ListElement = ({ element }) => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(state => state.contacts.items);
   const removeContact = contact => {
     dispatch(deleteContact(contacts.filter(item => item.id !== contact)));
   };
@@ -12,7 +12,7 @@ export const ListElement = ({ element }) => {
   return (
     <ContactWrapper>
       <li>
-        {element.name}: {element.number}
+        {element.name}: {element.phone}
       </li>
       <ButtonDel onClick={() => removeContact(element.id)}>delete </ButtonDel>
     </ContactWrapper>
