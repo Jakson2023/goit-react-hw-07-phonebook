@@ -10,8 +10,6 @@ export const slice = createSlice({
 
   extraReducers: {
     [fetchContacts.pending](state) {
-    
-      
       state.isLoading = true;
     },
     [fetchContacts.fulfilled](state, action) {
@@ -27,15 +25,16 @@ export const slice = createSlice({
 
 
 
-  // reducers: {
-  //   addContact(state, action) {
-  //     state.contacts = [...state.contacts, action.payload];
-  //   },
-  //   deleteContact(state, action) {
-  //     state.contacts = action.payload;
-  //   },
-  // },
+  reducers: {
+    addContact(state, action) {
+      state.contacts = [...state.contacts, action.payload];
+    },
+    deleteNumber(state, action) {
+      state.items=state.items.filter(item => item.id !== action.payload.id)
+      
+    },
+  },
 });
 
-export const { addContact, deleteContact } = slice.actions;
+export const { addContact, deleteNumber } = slice.actions;
 export const contactsReducer = slice.reducer;
