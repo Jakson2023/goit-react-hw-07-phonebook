@@ -1,8 +1,7 @@
-import { nanoid } from 'nanoid';
 import { InputForm, ButtonAdd, StyledForm } from 'components/Phonebook.styled';
 import { Formik, Field, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/contactsSlice';
+import { addContact } from 'components/Operations/operations';
 import * as Yup from 'yup';
 const PhonebookSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,7 +24,7 @@ const PhonebookSchema = Yup.object().shape({
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts.contacts);
+  const contacts = useSelector(state => state.contacts.items);
 
   const addNewContact = newContact => {
     const contactInList = contacts.find(
@@ -37,7 +36,7 @@ export const ContactForm = () => {
     if (contactInList) {
       alert(`${contactInList.name} is already in contacts`);
     } else {
-      dispatch(addContact({ id: nanoid(), ...newContact }));
+      dispatch(addContact({...newContact }));
     }
   };
 
