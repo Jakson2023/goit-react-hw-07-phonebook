@@ -4,8 +4,7 @@ import { ListElement } from 'components/ListElement/ListElement';
 export const ContactList = () => {
   const contacts = useSelector(state => state.contacts.items);
   const filters = useSelector(state => state.filter.filter);
-console.log(contacts);
-
+  
   const filteredContacts = () => {
     return contacts.filter(
       contact =>

@@ -54,3 +54,14 @@ export const ContactWrapper = styled.span`
 export const ButtonDel = styled.button`
   background-color: #ff000057;
 `;
+export const ErrorMsg = styled.p`
+  font-size: 20px;
+  color: red;
+  text-align: center;
+`;
+
+export const Loading = styled.p`
+  font-size: 20px;
+  color: green;
+  text-align: center;
+`;
