@@ -1,6 +1,6 @@
 import { ContactWrapper, ButtonDel } from 'components/Phonebook.styled';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'components/Operations/operations';
+import { deleteContact } from 'redux/operations';
 
 export const ListElement = ({ element }) => {
   const dispatch = useDispatch();

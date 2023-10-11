@@ -1,5 +1,5 @@
 import { TitleText, Wrapper, Title, ErrorMsg, Loading } from './Phonebook.styled';
-import { fetchContacts } from './Operations/operations';
+import { fetchContacts } from '../redux/operations';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
