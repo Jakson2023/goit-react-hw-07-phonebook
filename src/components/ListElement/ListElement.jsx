@@ -4,6 +4,7 @@ import { deleteContact } from 'components/Operations/operations';
 
 export const ListElement = ({ element }) => {
   const dispatch = useDispatch();
+  
   return (
     <ContactWrapper>
       <li>
